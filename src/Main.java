@@ -1,24 +1,27 @@
 import java.util.ArrayList;
 import java.util.List;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
-        Persona persona = new Persona("Carlos", 40);
-        persona.saludar();
-        Estudiante estudiante = new Estudiante("Laura", 21, "2º DAM");
-        estudiante.saludar();
-        estudiante.mostrarCurso();
-        Persona p = new Estudiante("Andrés", 22, "1º DAM");
-        p.saludar();
-        Persona p1 = new Estudiante("Carlos", 22, "1º DAM");
-        Profesor profesor = new Profesor("Luis", 45,"Programación");
-        Persona.personas.add(p);
-        Persona.personas.add(persona);
-        Persona.personas.add(estudiante);
-        System.out.println(Persona.personas);
-        profesor.reganar(profesor,p);
+       Persona persona1 = new Estudiante("Carlos", 22,"2ºDam");
+       Persona persona2 = new Profesor("Marcos",40,"Entornos");
+       Persona persona3 = new Estudiante("Alvaro",18, "1º DAM" );
+       Persona persona4 = new Estudiante("Sebastian",19, "2º DAM");
+        Persona.personas.add(persona1);
+        Persona.personas.add(persona2);
+        Persona.personas.add(persona3);
+        Persona.personas.add(persona4);
+
+       for (Persona persona : Persona.personas){
+           if (persona instanceof Estudiante estudiante){
+               estudiante.saludar();
+               estudiante.mostrarCurso();
+           } else if (persona instanceof Profesor profesor){
+               profesor.saludar();
+               profesor.mostrarMateria();
+           }
+       }
 
 
     }

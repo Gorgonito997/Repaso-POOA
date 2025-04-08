@@ -5,6 +5,10 @@ public class Profesor extends Persona{
         this.materia = materia;
     }
 
+    public void mostrarMateria(){
+        System.out.printf("Imparto la materia: %s",materia);
+    }
+
     public void reganar(Persona persona1, Persona persona2){
         if (persona1 instanceof Profesor){
             System.out.printf("%s: Cállate ya, estúpido de las narices y atiéndeme %s", persona1.getNombre(),persona2.getNombre());
